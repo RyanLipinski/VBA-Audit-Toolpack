@@ -1,0 +1,50 @@
+Public Sub fences()
+
+'Declare Variables
+Dim ActSheet As Worksheet
+Dim SelRange As Range
+Dim cellrow As Integer
+Dim cellcolumn As Integer
+Dim cellcount As Integer
+
+'Take in user range
+Set ActSheet = ActiveSheet
+Set SelRange = Selection
+
+
+'''''If the user selected more than one cell, alert and terminate program
+cellcount = SelRange.Count
+
+If cellcount > 1 Then
+    MsgBox ("You must select only one cell")
+    End
+End If
+'''''''''''
+
+'Highlight the current cell blue
+With SelRange
+    .Interior.Color = vbBlue
+End With
+
+'Get numerical location of current cell
+cellrow = SelRange.Row
+cellcolumn = SelRange.Column
+
+
+'''Adjust the rows to the left to be blue with width 3
+With ActSheet.Range(SelRange, ActSheet.Cells(cellrow, 1))
+    .Interior.Color = vbBlue
+End With
+
+ActSheet.Rows(cellrow).RowHeight = 16
+
+
+'''Adjust the columns above to be blue with width 3
+With ActSheet.Range(SelRange, ActSheet.Cells(1, cellcolumn))
+   .Interior.Color = vbBlue
+End With
+
+ActSheet.Columns(cellcolumn).ColumnWidth = 3
+
+
+End Sub
