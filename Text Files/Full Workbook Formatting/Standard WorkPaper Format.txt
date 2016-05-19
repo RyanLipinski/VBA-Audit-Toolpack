@@ -1,0 +1,20 @@
+Public Sub formatbook()
+
+Application.ScreenUpdating = False
+
+
+
+Dim wkst As Worksheet
+
+'Changes the font to arial and the font size to 10
+For Each wkst In Application.ActiveWorkbook.Worksheets
+    wkst.Cells.Font.Name = "Arial"
+    wkst.Cells.Font.Size = 10
+Next
+
+
+
+Application.ScreenUpdating = True
+
+
+End Sub
