@@ -1,0 +1,18 @@
+Public Sub tickmark()
+
+Dim ActSheet As Worksheet
+Dim SelRange As Range
+
+Set ActSheet = ActiveSheet
+Set SelRange = Selection
+
+With SelRange
+    .Font.Color = vbRed
+    .Font.Name = "Arial"
+    .Font.Size = 11
+    .Font.Bold = True
+    .HorizontalAlignment = xlRight
+End With
+
+
+End Sub
