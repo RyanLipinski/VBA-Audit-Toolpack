@@ -1,0 +1,22 @@
+Public Sub adjaverage()
+
+'''Define Variables'''
+Dim ActSheet As Worksheet
+Dim SelRange As Range
+Dim averageval As Double
+Dim r As Range
+
+'''Assign Active Sheet and User Selected Range to variables'''
+Set ActSheet = ActiveSheet
+Set SelRange = Selection
+
+'''averageval variable takes on average of user-defined (active) range'''
+averageval = Application.WorksheetFunction.Average(SelRange)
+
+'''Makes each value in range take on average value of user-defined range'''
+For Each r In SelRange
+    r.Value = averageval
+Next
+
+
+End Sub

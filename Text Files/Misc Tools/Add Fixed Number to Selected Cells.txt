@@ -1,0 +1,27 @@
+Public Sub addtoall()
+
+'''Define variables'''
+Dim ActSheet As Worksheet
+Dim SelRange As Range
+Dim r As Range
+
+'''useradd is user-defined value'''
+Dim useradd As Double
+
+'''Assign Active Sheet and User Selected Range to variables'''
+Set ActSheet = ActiveSheet
+Set SelRange = Selection
+
+'''Eliminates problem of empty input box
+On Error Resume Next
+
+'''Give user option for what value to add to all cells'''
+useradd = InputBox(prompt:="What value would you like to add to all selected cells", Title:="Select Value to Add")
+
+'''Add fixed user-defined value to all values in selected range'''
+For Each r In SelRange
+    r.Value = r.Value + useradd
+Next
+
+
+End Sub
