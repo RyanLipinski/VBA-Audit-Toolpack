@@ -1,0 +1,37 @@
+Public Sub inserttextbox()
+
+'''Define Variables'''
+Dim ActSheet As Worksheet
+Dim SelRange As Range
+Dim custtextbox As Shape
+Dim texxtbos As textbox
+
+'''Assign Active Sheet and User Selected Range to variables'''
+Set ActSheet = ActiveSheet
+Set SelRange = Selection
+
+'''Creates a text box, sets horizontal orientation, defines size'''
+Set custtextbox = ActSheet.Shapes.AddTextbox(msoTextOrientationHorizontal, 96.5, 14.5, 364.5, 96.5)
+    
+    
+'''Changes the inside color of the text box'''
+With custtextbox.Fill
+    '''''The following lines of code (used for color formatting) were generated using a recorded macro'''''
+    .Visible = msoTrue
+    .ForeColor.ObjectThemeColor = msoThemeColorAccent4
+    .ForeColor.TintAndShade = 0
+    .ForeColor.Brightness = 0.400000006
+    .Transparency = 0
+    .Solid
+    '''''End Recorded Macro'''''
+End With
+
+
+'''Sets appropriate font size, changes font to arial, makes font bold'''
+With custtextbox.TextFrame2.TextRange.Font
+    .Name = "Arial"
+    .Size = 11
+    .Bold = True
+End With
+
+End Sub
