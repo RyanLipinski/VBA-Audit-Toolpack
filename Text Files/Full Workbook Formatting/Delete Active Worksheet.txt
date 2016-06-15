@@ -1,0 +1,13 @@
+Public Sub delwkst()
+
+'''Define Variables'''
+Dim ActSheet As Worksheet
+
+'''Assign Active Sheet'''
+Set ActSheet = ActiveSheet
+
+
+ActSheet.Delete
+
+
+End Sub
