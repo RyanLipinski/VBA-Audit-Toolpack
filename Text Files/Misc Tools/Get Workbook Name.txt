@@ -1,0 +1,11 @@
+Public Sub copypaste()
+
+Dim wkstname As String
+Dim placeholder As String
+
+wkstname = ActiveWorkbook.Name
+
+placeholder = InputBox("Your worksheet name is:", , wkstname)
+
+
+End Sub
